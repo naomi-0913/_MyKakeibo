@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+/* 背景 */
+body {
+ 	background-color: #0F8EC6;
+}
+header {
+	/* outline-style: solid */;
+	display:flex;
+}
+/* タイトル */
+.logo {
+	/* outline-style: solid; */
+	padding: 30px;
+}
+.logolink {
+	/* outline-style: solid; */
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	color: #ffffff;
+	font-size: 40px;
+	text-decoration: none;
+}
+nav {
+	/* outline-style: solid */
+	width: 75%;
+	margin: 30px;
+}
+/* メニュー */
+nav ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: flex-end;
+	padding: 0;
+}
+li {
+	/* outline-style: solid */
+	margin: 15px;
+}
+.icon{
+	color: #ffffff;
+}
+/* 背景画像 */
+.back_image {
+	/* outline-style: solid */
+	border-radius: 10px;
+	height: 100vh;
+	margin: 0 60px;
+	background: url("images/business-861325_1920.jpg");
+	background-size: cover;
+}
+
+.back_image p {
+	/* outline-style: solid */
+	padding: 5rem;
+	color: #ffffff;
+	line-height: 2.5;
+}
+
+h2 {
+	/* outline-style: solid; */
+	color: #ffffff;
+	text-align: center;
+	font-weight: 100;
+}
+.container {
+	/* outline-style: solid; */
+	padding: 1rem 35rem;
+}
+.form {
+	/* outline-style: solid; */
+	background-color: #ffffff;
+	padding: 5rem;
+	text-align: left;
+}
+input {
+	width: 100%;
+	border-style: solid;
+	border-width: 0.5px;
+    border-color: #dddddd;
+}
+#submit {
+	outline-style: solid;
+	width: 100%;
+	background-color: #0F8EC6;
+	padding: 2px;
+	color: #ffffff;
+	text-align: center;
+}
+.container p {
+	color: #ffffff;
+	line-height: 2.5;
+}
+.container a {
+	color: #ffffff;
+	text-decoration: none;
+}
