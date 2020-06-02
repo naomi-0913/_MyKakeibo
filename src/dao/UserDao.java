@@ -16,9 +16,10 @@ import model.User;
  */
 public class UserDao {
 //	DB接続に使用する情報
-	private final String JDBC_URL ="jdbc:mysql://localhost/doko_tsubu";
-	private final String DB_USER = "doko";
-	private final String DB_PASS = "Q5-dA4TD";
+//	private final String JDBC_URL ="jdbc:mysql://localhost/mykakeibo";
+	private final String JDBC_URL = "jdbc:mysql://localhost:3306/mykakeibo";
+	private final String DB_USER = "kakeibo";
+	private final String DB_PASS = "|4nCV8e2";
 
 	Connection con = null;
 	PreparedStatement pst = null;
@@ -31,7 +32,7 @@ public class UserDao {
 	public Connection getConnection() {
 		Connection con = null;
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 		} catch (SQLException |ClassNotFoundException e) {
 			e.printStackTrace();

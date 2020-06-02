@@ -43,7 +43,7 @@ public class SignupServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		// リクエストパラメータの取得
-		String userName = request.getParameter("userName");
+		String userName = request.getParameter("user_name");
 		String password = request.getParameter("password");
 		String msg =null;
 
@@ -59,16 +59,17 @@ public class SignupServlet extends HttpServlet {
 				session.setAttribute("loginUser", user);
 				msg = "ユーザー登録が完了しました。";
 			} else {
-				response.sendRedirect("/WEB-INF/jsp/signUp.jsp");
 				msg = "登録できませんでした。";
+				response.sendRedirect("/WEB-INF/jsp/signup.jsp");
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		request.setAttribute("msg", msg);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
-		dispatcher.forward(request, response);
+//		response.sendRedirect("/index.jsp");
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+//		dispatcher.forward(request, response);
 
 	}
 

@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import model.LoginLogic;
+import model.User;
 
 /** ログイン処理用のサーブレットクラス
  * Servlet implementation class LoginServlet
@@ -31,13 +35,29 @@ public class LoginServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 		dispatcher.forward(request, response);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		// リクエストパラメータの取得
+		String name = request.getParameter("name");
+		String pass = request.getParameter("pass");
+
+		try {
+			User user = new User(name, pass);
+			LoginLogic loginLogic = new LoginLogic();
+			// ログイン処理
+			if (loginLogic.existUser(user)) {
+				HttpSession session = request.getSession();
+				session.setAttribute("loginUser", user);
+			}
+			//ログイン結果画面にフォワード
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+			dispatcher.forward(request, response);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

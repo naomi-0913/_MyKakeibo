@@ -10,8 +10,8 @@
 	<jsp:include page="/header.jsp" />
 	<h2>新規登録</h2>
 	<div class="container">
-		<form action="Signup" method="post" class="form">
-			ユーザー名<br> <input type="text" name=userName><br><br>
+		<form action="/MyKakeibo/Signup" method="post" class="form">
+			ユーザー名<br> <input type="text" name=user_name><br><br>
 			パスワード<br> <input type="text" name=password><br><br>
 			<input type="submit" value="登録" id="submit">
 		</form>

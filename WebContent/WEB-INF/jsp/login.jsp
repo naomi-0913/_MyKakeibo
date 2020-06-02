@@ -10,7 +10,7 @@
 	<jsp:include page="/header.jsp" />
 	<h2>ログイン</h2>
 	<div class="container">
-		<form action="/Login" method="post" class="form">
+		<form action="/MyKakeibo/Login" method="post" class="form">
 			ユーザー名<br>
 			<input type="text" name=userName><br><br>
 			パスワード<br>
