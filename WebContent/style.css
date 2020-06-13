@@ -5,70 +5,85 @@ body {
  	background-color: #0F8EC6;
 }
 header {
-	/* outline-style: solid */;
-	display:flex;
+	display: flex;
 }
-/* タイトル */
+/* タイトル[My家計簿] */
 .logo {
-	/* outline-style: solid; */
 	padding: 30px;
 }
 .logolink {
-	/* outline-style: solid; */
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 	color: #ffffff;
 	font-size: 40px;
 	text-decoration: none;
 }
-nav {
-	/* outline-style: solid */
+.header_menu {
 	width: 75%;
 	margin: 30px;
+	display: flex;
+	flex-direction: row-reverse;
 }
 /* メニュー */
-nav ul {
-	list-style-type: none;
-	display: flex;
-	justify-content: flex-end;
-	padding: 0;
+#target, #target2 {
+	padding: 0 1rem;
 }
 li {
-	/* outline-style: solid */
 	margin: 15px;
 }
 .icon{
 	color: #ffffff;
 }
-/* 背景画像 */
-.back_image {
-	/* outline-style: solid */
+/* fadeinメニュー */
+.nav {
+	position: absolute;
+	top: 15%;
+	height: 50vh;
+	width: 50vh;
+	right: -100%;
+	-webkit-transition: 1.5s;
+   	transition: 1.5s;
+}
+.nav ul {
+	display: flex;
+	flex-direction: column;
+	background: rgba(99, 99, 99,.95);
 	border-radius: 10px;
-	height: 100vh;
+	list-style: none;
+}
+.nav li {
+	text-align: center;
+}
+.fadein {
+ 	-webkit-transform: translateX(100%);
+	transform: translateX(-100vw);
+	transition-duration: 0.3s;
+}
+
+/* TOP背景画像 */
+.back_image {
+	border-radius: 10px;
+	height: 80vh;
 	margin: 0 60px;
 	background: url("images/business-861325_1920.jpg");
 	background-size: cover;
 }
 
 .back_image p {
-	/* outline-style: solid */
 	padding: 5rem;
 	color: #ffffff;
 	line-height: 2.5;
 }
 
 h2 {
-	/* outline-style: solid; */
 	color: #ffffff;
 	text-align: center;
 	font-weight: 100;
 }
+/* ログインページ */
 .container {
-	/* outline-style: solid; */
 	padding: 1rem 35rem;
 }
 .form {
-	/* outline-style: solid; */
-	background-color: #ffffff;
 	padding: 5rem;
 	text-align: left;
 }
@@ -90,7 +105,145 @@ input {
 	color: #ffffff;
 	line-height: 2.5;
 }
-.container a {
+
+/* 入力ページ */
+main {
+	height: 70vh;
+}
+.large_container{
+	padding: 2rem 10rem;
+	height: 100%;
+}
+.input_form {
+	height: 100%;
+}
+.input_form-container1{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1rem;
+}
+.input_form-container1 input {
+	width: 25%;
+	margin: 0 1rem;
+	padding: 0.5rem;
+}
+.input_form-container1 label {
+	padding: 0.5rem;
+	margin: 0 0.5rem;
+}
+.input_form-container1 input[type="checkbox"] {
+	display: none;
+}
+ .input_form-container1 #income:checked + label {
+	background-color: #0F8EC6;
+	color: #ffffff;
+}
+.input_form-container1 #outcome:checked + label {
+	background-color: #0F8EC6;
+	color: #ffffff;
+}
+.input_form-contanier2{
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+}
+.input_form-contanier2 p{
+	width: 40%;
+	margin: 0 2rem;
+	padding: 0.5rem 1rem;
+}
+.input_form-contanier3 {
+	display: flex;
+	justify-content: center;
+}
+.input_form-contanier3 input {
+	width: 16%;
+	padding: 0.5rem 1rem;
+}
+/* 閲覧ページ */
+.title_wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 10rem;
+}
+h3 {
+	width: 35%;
+	color: #ffffff;
+	font-size: 1.5em;
+	font-weight: 100;
+	text-align: left;
+	margin: auto;
+}
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.details {
+	/* outline-style: solid; */
+	width: 49%;
+	margin: auto;
+}
+.details p {
+	padding: 0.2rem 1rem;
+	margin: 0.5rem;
+	width: 30%;
+}
+.sub_total {
+ 	width: 30%;
+ 	margin: 0.5rem auto;
+}
+.sub_total p {
+	padding: 0.5rem;
+}
+.total {
+	/* outline-style: solid; */
+	width: 100%;
+}
+.total right {
+	margin-left: 1rem;
+}
+.total p {
+	width: 35%;
+	padding: 0.5rem 1rem;
+	margin: 0.5rem;
+}
+/* 共通ID */
+/* 丸角の枠線、白の背景 */
+#round_border-white_back {
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+/* 白で丸角の枠線 */
+#white_line-round_border {
+	border-radius: 10px;
+	border-color: #E6E4E0;
+	border-style: solid;
+	border-width: 0.5px;
+}
+.round_border-white_back {
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+h4 {
+	color: #ffffff;
+	font-size: 1.5em;
+	font-weight: 100;
+	text-align: left;
+	padding: 0 5rem;
+}
+a {
+	font-family: 'M PLUS Rounded 1c', sans-serif;
 	color: #ffffff;
 	text-decoration: none;
 }
+
+
+
+
+
+
+
+
+
+
