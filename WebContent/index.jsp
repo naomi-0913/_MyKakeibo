@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<% String msg = (String) request.getParameter("msg"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,15 +9,18 @@
 </head>
 <body>
 	<jsp:include page="/header.jsp" />
-	<div>
+	<main>
 		<!-- TOP背景画像 -->
 		<div class="back_image">
 			<p>
 				月々の収入・支出を<br> ノートに書いてませんか？<br> My家計簿は、<br>
 				簡単に家計管理をできるようにします。
 			</p>
+<%-- 			<% if (msg != null) { %>
+			<p><%= msg %></p>
+			<% } %> --%>
 		</div>
 
-	</div>
+	</main>
 </body>
 </html>
