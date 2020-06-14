@@ -1,11 +1,20 @@
 <%@ page pageEncoding="UTF-8" %>
+<%@ page import="model.User" %>
+<% User loginUser = (User)session.getAttribute("loginUser");
+String comand = "";
+if (null == loginUser){
+	comand = "login";
+} else {
+	comand= "update";
+}
+%>
 <header>
 	<div class="logo">
 		<a href="/MyKakeibo/" class="logolink">My家計簿</a>
 	</div>
 	<div class="header_menu">
 			<div id="target"><i class="fas fa-bars fa-2x icon"></i></div>
-			<div id="target2"><a href="/MyKakeibo/User?comand=login"><i class="far fa-user fa-2x icon"></i></a></div>
+			<div id="target2"><a href="/MyKakeibo/User?comand=<%=comand %>"><i class="far fa-user fa-2x icon"></i></a></div>
 	</div>
 	<nav class="nav" id="nav_f">
 		<ul>
