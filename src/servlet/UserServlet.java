@@ -40,23 +40,22 @@ public class UserServlet extends HttpServlet {
 		User user = (User)session.getAttribute("loginUser");
 
 			try {
-				if (user == null) {
-					dispacherName = "/WEB-INF/jsp/main.jsp";
-					if ("signup".equals(comand)) {
-						dispacherName = "/WEB-INF/jsp/signup.jsp";
-					}
-				} else {
+					if ("login".equals(comand)) {
+						dispacherName = "/WEB-INF/jsp/main.jsp";
+					//更新
+					} else if ("update".equals(comand)) {
+						dispacherName = "/WEB-INF/jsp/main.jsp";
 					// ログアウト
-					if ("logout".contentEquals(comand)) {
+					} else if ("logout".equals(comand)) {
 						session.invalidate();
 						dispacherName = "/index.jsp";
 					}
-				}
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
+		session.setAttribute("longinUser", user);
 		// 画面フォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher(dispacherName);
 		dispatcher.forward(request, response);
@@ -66,7 +65,7 @@ public class UserServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		 パラメータの取得
+		// パラメータの取得
 		String name = request.getParameter("user_name");
 		String password = request.getParameter("password");
 		String comand = request.getParameter("comand");
