@@ -2,27 +2,12 @@
 
 "MyKakeibo"は、家計簿の管理をより便利に簡単にできるアプリを目指しています。
 
-# Requirement（編集中）
 
-* huga 3.5.2
-* hogehuga 1.0.2
-
-# Installation（編集中）
-
-Requirementで列挙したライブラリなどのインストール方法を説明する
+# Usage
 
 ```bash
-pip install huga_package
-```
+git clone https://github.com/naomi-0913/MyKakeibo.gihttps://github.com/naomi-0913/MyKakeibo.git
 
-# Usage（編集中）
-
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
-
-```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
 ```
 
 # Note
