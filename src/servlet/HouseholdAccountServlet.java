@@ -60,6 +60,7 @@ public class HouseholdAccountServlet extends HttpServlet {
 
 		try {
 			if (user == null) {
+				comand = "login";
 				dispacherName = "/WEB-INF/jsp/main.jsp";
 			}else {
 				Connection con = kakeiboLogic.getConnection();
@@ -82,6 +83,7 @@ public class HouseholdAccountServlet extends HttpServlet {
 			request.setAttribute("msg", msg);
 			request.setAttribute("kakeiboList", kakeiboList);
 			request.setAttribute("date", date);
+			request.setAttribute("comand", comand);
 
 		} catch (Exception e ) {
 			e.printStackTrace();
