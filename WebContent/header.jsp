@@ -18,9 +18,12 @@ if (null == loginUser){
 	</div>
 	<nav class="nav" id="nav_f">
 		<ul>
-			<li><a href="/MyKakeibo/HouseholdAccount?comand=edit" class="list">家計簿を編集する</a></li>
 			<li><a href="/MyKakeibo/HouseholdAccount?comand=detail" class="list">家計簿を見る</a></li>
-			<li><a href="/MyKakeibo/User?comand=logout" class="list">ログアウト</a></li>
+			<li><a href="/MyKakeibo/HouseholdAccount?comand=insert" class="list">家計簿を入力する</a></li>
+			<li><a href="/MyKakeibo/HouseholdAccount?comand=edit" class="list">家計簿を編集する</a></li>
+			<% if (loginUser != null) {%>
+				<li><a href="/MyKakeibo/User?comand=logout" class="list">ログアウト</a></li>
+			<% } %>
 		</ul>
 	</nav>
 <script type="text/javascript" src="kakeibo.js"></script>
