@@ -111,7 +111,7 @@ main {
 	height: 70vh;
 }
 .large_container{
-	padding: 2rem 10rem;
+	padding: 2rem 0;
 	height: 100%;
 }
 .input_form {
@@ -147,14 +147,17 @@ main {
 	justify-content: center;
 	padding: 1rem;
 }
+.sub_total-amount {
+	width: 20%;
+}
 .input_form-contanier2 p{
-	width: 40%;
-	margin: 0 2rem;
 	padding: 0.5rem 1rem;
+
 }
 .input_form-contanier3 {
 	display: flex;
 	justify-content: center;
+	padding: 0.5rem;
 }
 .input_form-contanier3 input {
 	width: 16%;
@@ -180,7 +183,6 @@ h3 {
 	justify-content: center;
 }
 .details {
-	/* outline-style: solid; */
 	width: 49%;
 	margin: auto;
 }
@@ -189,9 +191,25 @@ h3 {
 	margin: 0.5rem;
 	width: 30%;
 }
+.details input {
+	padding: 0.2rem 1rem;
+	margin: 0.5rem;
+}
+.details button {
+	margin: 0.5rem 0.1rem;
+	width: 17rem;
+	}
+.small_submit {
+	width: 4rem;
+}
+.edit_form {
+	display: flex;
+}
 .sub_total {
- 	width: 30%;
+ 	width: 50%;
  	margin: 0.5rem auto;
+ 	display: flex;
+ 	justify-content: center;
 }
 .sub_total p {
 	padding: 0.5rem;
@@ -209,11 +227,6 @@ h3 {
 	margin: 0.5rem;
 }
 /* 共通ID */
-/* 丸角の枠線、白の背景 */
-#round_border-white_back {
-	border-radius: 10px;
-	background-color: #ffffff;
-}
 /* 白で丸角の枠線 */
 #white_line-round_border {
 	border-radius: 10px;
@@ -237,7 +250,9 @@ a {
 	color: #ffffff;
 	text-decoration: none;
 }
-
+.white_font {
+	color: #ffffff;
+}
 
 
 

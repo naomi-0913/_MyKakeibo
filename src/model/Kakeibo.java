@@ -35,6 +35,10 @@ public class Kakeibo {
 	public void setMonth(String month) {
 		this.month = month;
 	}
+	/** @return id */
+	public String getId() {
+		return id;
+	}
 	/** @return money_tyoe */
 	public String getmoneyType() {
 		return moneyType;

@@ -69,5 +69,36 @@ public class KakeiboLogic {
 		return list;
 	}
 
+	/** 家計簿の更新
+	 * @param kakeibo
+	 * @param user
+	 * @param con
+	 * @return
+	 * @throws SQLException
+	 * @throws IOException
+	 */
+	public boolean updateKakeibo(Kakeibo kakeibo, User user, Connection con) throws SQLException, IOException {
+		if (kakeiboDao.updateKakeibo(kakeibo, user, con)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/** 家計簿の削除
+	 * @param kakeibo
+	 * @param user
+	 * @param con
+	 * @return
+	 * @throws SQLException
+	 * @throws IOException
+	 */
+	public boolean deleteKakeibo(Kakeibo kakeibo, User user, Connection con) throws SQLException, IOException {
+		if (kakeiboDao.deleteKakeibo(kakeibo, user, con)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 }
