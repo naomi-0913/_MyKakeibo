@@ -1,7 +1,9 @@
 # MyKakeibo
 
 "MyKakeibo"は、家計簿の管理をより便利に簡単にできるアプリを目指しています。
-
+ 
+# 言語
+Java 11
 
 # Usage
 
