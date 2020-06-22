@@ -12,7 +12,7 @@
 	<main>
 		<div class="large_container">
 		<form action="/MyKakeibo/HouseholdAccount" method="post" class="input_form">
-			<div class="input_form-container1" id="round_border-white_back">
+			<div class="input_form-container1 round_border-white_back">
 				<input type="checkbox" name="money_type" value="支出" id="outcome"><label for="outcome" id="white_line-round_border">支出</label>
 				or
 				<input type="checkbox" name="money_type" value="収入" id="income"><label for="income" id="white_line-round_border">収入</label>
@@ -20,12 +20,13 @@
 				<input type="text" name="amount" placeholder="金額" id="white_line-round_border">
 				<input type="text" name="memo" placeholder="メモ" id="white_line-round_border">
 			</div>
-			<div class="input_form-contanier2">
-				<p id="round_border-white_back">収入合計:</p>
-				<p id="round_border-white_back">支出合計:</p>
-			</div>
+			<!-- あとで開発予定 -->
+<!-- 			<div class="input_form-contanier2">
+				<p class="white_font">収入合計: </p><p class="sub_total-amount" id="round_border-white_back"></p>
+				<p class="white_font">支出合計: </p><p class="sub_total-amount" id="round_border-white_back"></p>
+			</div> -->
 			<div class="input_form-contanier3">
-			<input type="submit" value="登録する" id="round_border-white_back">
+			<input class="round_border-white_back" type="submit" value="登録する">
 			<input type="hidden" name="comand" value="insert">
 			</div>
 		</form>

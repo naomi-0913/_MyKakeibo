@@ -40,7 +40,7 @@ public class UserServlet extends HttpServlet {
 		User user = (User)session.getAttribute("loginUser");
 
 			try {
-					if ("login".equals(comand)) {
+					if ("login".equals(comand) || "signup".equals(comand)) {
 						dispacherName = "/WEB-INF/jsp/main.jsp";
 					//更新
 					} else if ("update".equals(comand)) {
@@ -55,7 +55,10 @@ public class UserServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 
-		session.setAttribute("longinUser", user);
+		if (user != null) {
+			session.setAttribute("longinUser", user);
+		}
+		request.setAttribute("comand", comand);
 		// 画面フォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher(dispacherName);
 		dispatcher.forward(request, response);

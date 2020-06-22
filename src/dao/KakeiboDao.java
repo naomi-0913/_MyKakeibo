@@ -137,4 +137,63 @@ public class KakeiboDao {
 		return list;
 	}
 
+	/** 家計簿の更新
+	 * @param kakeibo
+	 * @param user
+	 * @param con
+	 * @return true:成功、false:失敗
+	 * @throws SQLException
+	 */
+	public boolean updateKakeibo(Kakeibo kakeibo, User user, Connection con) throws SQLException {
+		try {
+			String sql = "update kakeibo set money_type = ?, category = ?, amount = ?, memo = ?, modified = now() " +
+						"where id = ? and user_id = ?";
+			pst = con.prepareStatement(sql);
+			pst.setString(1, kakeibo.getmoneyType());
+			pst.setString(2, kakeibo.getCategory());
+			pst.setString(3, kakeibo.getAmount());
+			pst.setString(4, kakeibo.getMemo());
+			pst.setInt(5, Integer.parseInt(kakeibo.getId()));
+			pst.setInt(6, Integer.parseInt(user.getId()));
+			pst.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			this.close(pst, rs);
+		}
+
+	}
+
+	/** 家計簿の家計簿
+	 * @param kakeibo
+	 * @param user
+	 * @param con
+	 * @return true:成功、false:失敗
+	 * @throws SQLException
+	 */
+	public boolean deleteKakeibo(Kakeibo kakeibo, User user, Connection con) throws SQLException {
+		try {
+			// 削除する家計簿を検索
+
+			String sql = "delete from kakeibo where id = ? and user_id = ?";
+			pst = con.prepareStatement(sql);
+			pst.setInt(1, Integer.parseInt(kakeibo.getId()));
+			pst.setInt(2, Integer.parseInt(user.getId()));
+			pst.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			this.close(pst, rs);
+		}
+
+	}
+
+
+
+
+
 }

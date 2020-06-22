@@ -1,3 +1,4 @@
+<%@page import="java.math.BigDecimal"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.List" %>
@@ -5,6 +6,8 @@
 <%@page import="model.Kakeibo" %>
 <% List<Kakeibo> kakeiboList = (List<Kakeibo>) request.getAttribute("kakeiboList");
 String date = (String) request.getAttribute("date");
+BigDecimal totalIncome = new BigDecimal("0");
+BigDecimal totalOutcome = new BigDecimal("0");
 %>
 <!DOCTYPE html>
 <html>
@@ -27,6 +30,9 @@ String date = (String) request.getAttribute("date");
 							<p id="white_line-round_border"><%= kakeiboInfo.getCategory() %></p>
 							<p id="white_line-round_border"><%= kakeiboInfo.getAmount() %></p>
 							<p id="white_line-round_border"><%= kakeiboInfo.getMemo() %></p>
+							<%
+								BigDecimal amount = new BigDecimal(kakeiboInfo.getAmount());
+								totalIncome = totalIncome.add(amount); %>
 						<% }%>
 					<%} %>
 						</section>
@@ -36,18 +42,22 @@ String date = (String) request.getAttribute("date");
 							<p id="white_line-round_border"><%= kakeiboInfo.getCategory() %></p>
 							<p id="white_line-round_border"><%= kakeiboInfo.getAmount() %></p>
 							<p id="white_line-round_border"><%= kakeiboInfo.getMemo() %></p>
+							<%
+								BigDecimal amount = new BigDecimal(kakeiboInfo.getAmount());
+								totalOutcome = totalOutcome.add(amount); %>
 						<%} %>
 					<%} %>
 					</section>
 				<section class="sub_total">
-					<p class="round_border-white_back">収入合計: </p>
+					<p class="white_font">収入合計: ¥</p><p class="sub_total-amount round_border-white_back"><%= totalIncome %></p>
 				</section>
 				<section class="sub_total">
-					<p class="round_border-white_back">支出合計: </p>
+					<p class="white_font">支出合計: ¥</p><p class="sub_total-amount round_border-white_back"><%= totalOutcome %></p>
 				</section>
-				<section class="total wrapper">
+				<!-- あとで開発予定 -->
+<!-- 				<section class="total wrapper">
 				<p id="round_border-white_back">5月の収支: </p>
-				</section>
+				</section> -->
 			</div>
 		</div>
 	</main>
