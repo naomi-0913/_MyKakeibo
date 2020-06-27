@@ -47,18 +47,20 @@ public class UserServlet extends HttpServlet {
 						dispacherName = "/WEB-INF/jsp/main.jsp";
 					// ログアウト
 					} else if ("logout".equals(comand)) {
-						session.invalidate();
 						dispacherName = "/index.jsp";
+						session.invalidate();
 					}
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-		if (user != null) {
-			session.setAttribute("longinUser", user);
+		if (!"logout".equals(comand)) {
+			if (user != null) {
+				session.setAttribute("longinUser", user);
+			}
+			request.setAttribute("comand", comand);
 		}
-		request.setAttribute("comand", comand);
 		// 画面フォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher(dispacherName);
 		dispatcher.forward(request, response);
@@ -92,7 +94,11 @@ public class UserServlet extends HttpServlet {
 			if ("login".equals(comand) && user == null ) {
 				user = new User(name, password);
 				user = userLogic.selectUser(user, con);
-				msg = "ログインしました。";
+				if(user == null) {
+					msg = "ログインできませんでした。ユーザー情報をお確かめ下さい。";
+				} else {
+					msg = "ログインしました。";
+				}
 			//ユーザー登録
 			} else if("signup".equals(comand)) {
 				userLogic.insertUser(user, con);
