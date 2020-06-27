@@ -5,6 +5,8 @@
 <head>
 <title>ログイン</title>
 <jsp:include page="/common.jsp" />
+<script type="text/javascript">
+</script>
 </head>
 <body>
 	<jsp:include page="/header.jsp" />
@@ -15,10 +17,9 @@
 			<input type="text" name=user_name id="white_line-round_border"><br><br>
 			パスワード<br>
 			<input type="text" name=password id="white_line-round_border"><br><br>
-			<input type="submit" value="ログイン" id="white_line-round_border">
+			<input type="submit" value="ログイン" id="white_line-round_border" onClick="checkInformation">
 		</form>
 		<p><a href="/MyKakeibo/Signup">ユーザー登録はこちら</a></p>
 	</div>
-
 </body>
 </html>

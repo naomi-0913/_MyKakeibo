@@ -30,4 +30,18 @@ window.onload = function() {
 			hamburger2();
 	    });
 	}
+
+
 }
+
+function checkInformation() {
+	user_name = document.forms.user_form.user_name.value;
+	password = document.forms.user_form.password.value;
+	if (!user_name || !password) {
+		alert("未入力の項目があります。");
+		return false;
+	}
+}
+
+
+

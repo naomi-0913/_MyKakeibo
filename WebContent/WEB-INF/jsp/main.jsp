@@ -19,11 +19,11 @@
 	<% if ("login".equals(comand)) { %>
 		<h2>ログイン</h2>
 		<div class="container">
-			<form action="/MyKakeibo/User" method="post" class="form round_border-white_back">
+			<form action="/MyKakeibo/User" method="post" class="form round_border-white_back" name="user_form" onsubmit="return checkInformation();">
 				ユーザー名<br>
-				<input type="text" name=user_name id="white_line-round_border"><br><br>
+				<input type="text" name="user_name" id="white_line-round_border" ><br><br>
 				パスワード<br>
-				<input type="password" name=password id="white_line-round_border"><br><br>
+				<input type="password" name="password" id="white_line-round_border"><br><br>
 				<input type="hidden" name="comand" value="login">
 				<input type="submit" value="ログイン" id="white_line-round_border">
 			</form>
@@ -32,11 +32,11 @@
 	<% } else if ("update".equals(comand)) {%>
 		<h2>ユーザー情報</h2>
 		<div class="container">
-			<form action="/MyKakeibo/User" method="post" class="form round_border-white_back">
+			<form action="/MyKakeibo/User" method="post" class="form round_border-white_back" name="user_form" onsubmit="return checkInformation();">
 				ユーザー名<br>
-				<input type="text" name=user_name id="white_line-round_border" value=<%= loginUser.getName() %>><br><br>
+				<input type="text" name="user_name" id="white_line-round_border" value=<%= loginUser.getName() %>><br><br>
 				パスワード<br>
-				<input type="password" name=password id="white_line-round_border" value=<%= loginUser.getPass() %>><br><br>
+				<input type="password" name="password" id="white_line-round_border" value=<%= loginUser.getPass() %>><br><br>
 				<input type="hidden" name="comand" value="update">
 				<input type="submit" value="更新" id="white_line-round_border">
 			</form>
@@ -44,9 +44,9 @@
 	<% } else if ("signup".equals(comand)) { %>
 		<h2>新規登録</h2>
 	<div class="container">
-		<form action="/MyKakeibo/User" method="post" class="form round_border-white_back">
-			ユーザー名<br> <input type="text" name=user_name id="white_line-round_border"><br><br>
-			パスワード<br> <input type="text" name=password id="white_line-round_border"><br><br>
+		<form action="/MyKakeibo/User" method="post" class="form round_border-white_back" name="user_form" onsubmit="return checkInformation();">
+			ユーザー名<br>*必須項目<br> <input type="text" name="user_name" id="white_line-round_border"><br><br>
+			パスワード<br>*必須項目<br> <input type="text" name="password" id="white_line-round_border"><br><br>
 			<input type="hidden" name="comand" value="signup">
 			<input type="submit" value="登録" id="white_line-round_border">
 		</form>

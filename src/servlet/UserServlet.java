@@ -95,7 +95,7 @@ public class UserServlet extends HttpServlet {
 				user = new User(name, password);
 				user = userLogic.selectUser(user, con);
 				if(user == null) {
-					msg = "ログインできませんでした。ユーザー情報をお確かめの上、再度ログインして下さい。";
+					msg = "ログインできませんでした。ユーザー情報をお確かめ下さい。";
 				} else {
 					msg = "ログインしました。";
 				}
