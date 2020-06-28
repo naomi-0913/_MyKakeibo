@@ -139,10 +139,10 @@ public class HouseholdAccountServlet extends HttpServlet {
 				} else {
 					msg = "登録が失敗しました。";
 				}
+				dispacherName = "/WEB-INF/jsp/KakeiboInput.jsp";
 			} else if ("detail".equals(comand)) {
 				dispacherName = "/WEB-INF/jsp/KakeiboDetail.jsp";
 			} else if ("update".equals(comand)) {
-
 				if (kakeiboLogic.updateKakeibo(kakeibo, user, con)) {
 					dispacherName = "/WEB-INF/jsp/KakeiboEdit.jsp";
 				}
